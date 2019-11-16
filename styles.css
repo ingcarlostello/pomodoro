@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam:100,300&display=swap");
+
+body {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); 
+  margin: 0;
+}
+
+h1 {
+  font-family: "Be Vietnam", sans-serif;
+  text-align: center;
+  font-size: 7vw;
+  color: white;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+                                                            INPUT DESIGN
+-----------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------- Animate the bottom line when focus input *--------------------------------*/
+.label-box {
+  display: block;
+  position: relative;
+  width: 270px;
+}
+
+input {
+  width: 270px;
+  padding: 5px;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 2px solid black;
+  background: none;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus + .label-box label {
+  font-size: 14px;
+  transform: translateY(-22px);
+}
+
+label {
+  font-size: 18px;
+  color: white;
+  pointer-events: none;
+  position: absolute;
+  top: -28px;
+  transition-property: all;
+  transition-duration: 0.2s;
+  font-family: "Be Vietnam", sans-serif;
+}
+
+.label-box::before,
+.label-box::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 1px;
+  width: 0;
+  transition-property: width;
+  transition-duration: 0.2s;
+}
+
+.label-box::before {
+  left: 50%;
+}
+
+.label-box::after {
+  right: 50%;
+}
+
+input:focus + .label-box::before,
+input:focus + .label-box::after {
+  width: 50%;
+}
+
+input:focus + .label-box label,
+input:valid + .label-box label {
+  font-size: 14px;
+  transform: translateY(-24px);
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+                                                            TIMER DESIGN
+-----------------------------------------------------------------------------------------------------------------------------------------*/
+.col {
+  display: flex;
+  justify-content: center;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: center;
+}
+
+#countDownContainer {
+  margin-top: 30px;
+}
+
+.card{  
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); 
+}
+
+#minutes {
+  font-family: fantasy;
+  font-size: 10vw;
+  color: #e93922;
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 100;
+}
+#dots {
+  font-family: fantasy;
+  font-size: 10vw;
+  color: #e93922;
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 300;
+}
+#seconds {
+  font-family: fantasy;
+  font-size: 10vw;
+  color: #e93922;
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 100;
+}
+
+.containerButtons {
+  margin-top: 25px;
+}
+
+/*------------------------------- Timer Buttons *--------------------------------*/
+
+.button {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  text-decoration: none;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  background-color: whitesmoke;
+  border-radius: 50%;
+ 
+  border: 0px solid #000000;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.disabled {
+  text-decoration: none;
+  padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  background-color: #dddddd;
+  border-radius: 50%;
+  border: 2px solid #dddddd;
+  margin-left: 20px;
+}
+
+.button:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-transform: scale(1.03);
+  transform: scale(1);
+}
+.button:active {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+                                                            FADE IN ANIMATION
+-----------------------------------------------------------------------------------------------------------------------------------------*/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+                                                            PROGRESS BAR
+-----------------------------------------------------------------------------------------------------------------------------------------*/
+.progress {
+  width: 100%;
+  background-color: #ddd;
+  margin-top: 60px;
+  border-radius: 43px 43px 43px 43px;
+  border: 0px solid #000000;
+}
+
+.progress-bar {
+  width: 0;
+  background: #e93922;
+  text-align: center;
+  color: black;
+  transition-timing-function: linear;
+}
+
+
+
